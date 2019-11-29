@@ -1,0 +1,132 @@
+PROGRAM coord=let1-xform.tl0:1:0
+  DEFN coord=let1-xform.tl0:1:0 name=f
+    PARAMS arity=2 coord=let1-xform.tl0:1:6
+      PARAM coord=let1-xform.tl0:1:6 name=a
+      PARAM coord=let1-xform.tl0:1:8 name=b
+    APP coord=let1-xform.tl0:2:4 name=_0
+      ARGS arity=4 coord=let1-xform.tl0:3:4
+        ADD coord=let1-xform.tl0:3:4
+          REF coord=let1-xform.tl0:4:6 name=a
+          REF coord=let1-xform.tl0:5:6 name=b
+        SUB coord=let1-xform.tl0:6:4
+          REF coord=let1-xform.tl0:7:6 name=a
+          REF coord=let1-xform.tl0:8:6 name=b
+        REF coord=let1-xform.tl0:9:4 name=a
+        REF coord=let1-xform.tl0:10:4 name=b
+  APP coord=let1-xform.tl0:13:2 name=f
+    ARGS arity=2 coord=let1-xform.tl0:14:2
+      INT coord=let1-xform.tl0:14:2 value=2
+      INT coord=let1-xform.tl0:15:2 value=3
+  DEFN coord=let1-xform.tl0:18:0 name=g
+    PARAMS arity=3 coord=let1-xform.tl0:18:6
+      PARAM coord=let1-xform.tl0:18:6 name=a
+      PARAM coord=let1-xform.tl0:18:8 name=b
+      PARAM coord=let1-xform.tl0:18:10 name=c
+    APP coord=let1-xform.tl0:19:4 name=_1
+      ARGS arity=3 coord=let1-xform.tl0:20:4
+        ADD coord=let1-xform.tl0:20:4
+          REF coord=let1-xform.tl0:21:6 name=a
+          INT coord=let1-xform.tl0:22:6 value=2
+        MUL coord=let1-xform.tl0:23:4
+          REF coord=let1-xform.tl0:24:6 name=a
+          ADD coord=let1-xform.tl0:25:6
+            REF coord=let1-xform.tl0:26:8 name=b
+            REF coord=let1-xform.tl0:27:8 name=c
+        REF coord=let1-xform.tl0:28:4 name=c
+  APP coord=let1-xform.tl0:31:2 name=g
+    ARGS arity=3 coord=let1-xform.tl0:32:2
+      INT coord=let1-xform.tl0:32:2 value=2
+      INT coord=let1-xform.tl0:33:2 value=2
+      INT coord=let1-xform.tl0:34:2 value=3
+  DEFN coord=let1-xform.tl0:37:0 name=h
+    PARAMS arity=3 coord=let1-xform.tl0:37:6
+      PARAM coord=let1-xform.tl0:37:6 name=a
+      PARAM coord=let1-xform.tl0:37:8 name=b
+      PARAM coord=let1-xform.tl0:37:10 name=c
+    APP coord=let1-xform.tl0:38:4 name=_4
+      ARGS arity=3 coord=let1-xform.tl0:39:4
+        APP coord=let1-xform.tl0:39:6 name=_2
+          ARGS arity=3 coord=let1-xform.tl0:40:6
+            MUL coord=let1-xform.tl0:40:6
+              REF coord=let1-xform.tl0:41:8 name=a
+              REF coord=let1-xform.tl0:42:8 name=b
+            MUL coord=let1-xform.tl0:43:6
+              ADD coord=let1-xform.tl0:44:8
+                REF coord=let1-xform.tl0:45:10 name=a
+                REF coord=let1-xform.tl0:46:10 name=b
+              REF coord=let1-xform.tl0:47:8 name=c
+            REF coord=let1-xform.tl0:48:6 name=c
+        INT coord=let1-xform.tl0:50:4 value=22
+        REF coord=let1-xform.tl0:51:4 name=c
+  APP coord=let1-xform.tl0:54:2 name=h
+    ARGS arity=3 coord=let1-xform.tl0:55:2
+      INT coord=let1-xform.tl0:55:2 value=3
+      INT coord=let1-xform.tl0:56:2 value=4
+      INT coord=let1-xform.tl0:57:2 value=5
+  DEFN coord=let1-xform.tl0:60:0 name=_0
+    PARAMS arity=4 coord=let1-xform.tl0:60:7
+      PARAM coord=let1-xform.tl0:60:7 name=x
+      PARAM coord=let1-xform.tl0:60:9 name=y
+      PARAM coord=let1-xform.tl0:60:11 name=a
+      PARAM coord=let1-xform.tl0:60:13 name=b
+    ADD coord=let1-xform.tl0:61:2
+      MUL coord=let1-xform.tl0:62:4
+        REF coord=let1-xform.tl0:63:6 name=x
+        REF coord=let1-xform.tl0:64:6 name=x
+      ADD coord=let1-xform.tl0:65:4
+        MUL coord=let1-xform.tl0:66:6
+          REF coord=let1-xform.tl0:67:8 name=x
+          REF coord=let1-xform.tl0:68:8 name=y
+        ADD coord=let1-xform.tl0:69:6
+          MUL coord=let1-xform.tl0:70:8
+            REF coord=let1-xform.tl0:71:10 name=y
+            REF coord=let1-xform.tl0:72:10 name=y
+          MUL coord=let1-xform.tl0:73:8
+            REF coord=let1-xform.tl0:74:10 name=a
+            REF coord=let1-xform.tl0:75:10 name=b
+  DEFN coord=let1-xform.tl0:77:0 name=_1
+    PARAMS arity=3 coord=let1-xform.tl0:77:7
+      PARAM coord=let1-xform.tl0:77:7 name=a
+      PARAM coord=let1-xform.tl0:77:9 name=b
+      PARAM coord=let1-xform.tl0:77:11 name=c
+    SUB coord=let1-xform.tl0:78:2
+      ADD coord=let1-xform.tl0:79:4
+        REF coord=let1-xform.tl0:80:6 name=a
+        REF coord=let1-xform.tl0:81:6 name=b
+      REF coord=let1-xform.tl0:82:4 name=c
+  DEFN coord=let1-xform.tl0:84:0 name=_2
+    PARAMS arity=3 coord=let1-xform.tl0:84:7
+      PARAM coord=let1-xform.tl0:84:7 name=x
+      PARAM coord=let1-xform.tl0:84:9 name=b
+      PARAM coord=let1-xform.tl0:84:11 name=c
+    REM coord=let1-xform.tl0:85:2
+      ADD coord=let1-xform.tl0:86:4
+        REF coord=let1-xform.tl0:87:6 name=x
+        REF coord=let1-xform.tl0:88:6 name=b
+      REF coord=let1-xform.tl0:89:4 name=c
+  DEFN coord=let1-xform.tl0:91:0 name=_3
+    PARAMS arity=3 coord=let1-xform.tl0:91:7
+      PARAM coord=let1-xform.tl0:91:7 name=a
+      PARAM coord=let1-xform.tl0:91:9 name=b
+      PARAM coord=let1-xform.tl0:91:11 name=c
+    ADD coord=let1-xform.tl0:92:2
+      SUB coord=let1-xform.tl0:93:4
+        REF coord=let1-xform.tl0:94:6 name=a
+        REF coord=let1-xform.tl0:95:6 name=b
+      REF coord=let1-xform.tl0:96:4 name=c
+  DEFN coord=let1-xform.tl0:98:0 name=_4
+    PARAMS arity=3 coord=let1-xform.tl0:98:7
+      PARAM coord=let1-xform.tl0:98:7 name=a
+      PARAM coord=let1-xform.tl0:98:9 name=b
+      PARAM coord=let1-xform.tl0:98:11 name=c
+    SUB coord=let1-xform.tl0:99:2
+      ADD coord=let1-xform.tl0:100:4
+        REF coord=let1-xform.tl0:101:6 name=a
+        REF coord=let1-xform.tl0:102:6 name=b
+      APP coord=let1-xform.tl0:103:6 name=_3
+        ARGS arity=3 coord=let1-xform.tl0:104:6
+          ADD coord=let1-xform.tl0:104:6
+            REF coord=let1-xform.tl0:105:8 name=a
+            REF coord=let1-xform.tl0:106:8 name=c
+          INT coord=let1-xform.tl0:107:6 value=3
+          REF coord=let1-xform.tl0:108:6 name=c

@@ -1,0 +1,28 @@
+PROGRAM coord=let3.tl0:3:0 type=VOID
+  DEFN coord=let3.tl0:3:0 name=g offset=0 scope=1 type=VOID
+    PARAMS arity=3 coord=let3.tl0:3:6 type=VOID
+      PARAM coord=let3.tl0:3:6 name=a offset=0 scope=2 type=INT
+      PARAM coord=let3.tl0:3:8 name=b offset=1 scope=2 type=INT
+      PARAM coord=let3.tl0:3:10 name=c offset=2 scope=2 type=INT
+    LET coord=let3.tl0:4:3 type=LET
+      LETIDEXPR arity=2.0 coord=let3.tl0:5:5
+        REF coord=let3.tl0:5:5 name=a offset=0 scope=3 type=INT
+        ADD coord=let3.tl0:5:7 type=INT
+          REF coord=let3.tl0:5:9 name=a offset=0 scope=2 type=INT
+          INT coord=let3.tl0:5:11 type=INT value=2
+        REF coord=let3.tl0:6:5 name=b offset=2 scope=3 type=INT
+        MUL coord=let3.tl0:6:7 type=INT
+          REF coord=let3.tl0:6:9 name=a offset=0 scope=2 type=INT
+          ADD coord=let3.tl0:6:11 type=INT
+            REF coord=let3.tl0:6:13 name=b offset=1 scope=2 type=INT
+            REF coord=let3.tl0:6:16 name=c offset=2 scope=2 type=INT
+      SUB coord=let3.tl0:8:5 type=INT
+        ADD coord=let3.tl0:8:7 type=INT
+          REF coord=let3.tl0:8:9 name=a offset=0 scope=3 type=INT
+          REF coord=let3.tl0:8:12 name=b offset=2 scope=3 type=INT
+        REF coord=let3.tl0:8:14 name=c offset=2 scope=2 type=INT
+  APP coord=let3.tl0:12:1 name=g offset=0 scope=1 type=INT
+    ARGS arity=3 coord=let3.tl0:12:3 type=VOID
+      INT coord=let3.tl0:12:3 type=INT value=2
+      INT coord=let3.tl0:12:5 type=INT value=2
+      INT coord=let3.tl0:12:7 type=INT value=3

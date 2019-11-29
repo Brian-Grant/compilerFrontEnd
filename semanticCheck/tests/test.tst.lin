@@ -1,0 +1,149 @@
+class $Main : Object{
+  Void f(Int n, Int p)   {
+    Real t;
+    Int a, b, c;
+    Sup s;
+    Int[] arr;
+    arr[0] = 1;
+    a = - 1;
+    b = (Int)2.8;
+    b + 7;
+    t + s.x;
+    a + arr[0];
+    a + Sup.stat;
+    a + s.stuff();
+    a + - 3;
+    a + (Int)4.0;
+    a + (b = 4);
+    t = 9.9;
+    b = 1;
+    c = 2;
+    s = Sup(2.0, 9.1);
+    arr = Int[3];
+  }
+  Void $main()   {
+    $Main.$staticInit();
+    Sup.$staticInit();
+    Sub.$staticInit();
+    Sys.$staticInit();
+    Array.$staticInit();
+  }
+  Void $staticInit()   {
+  }
+}
+class Sup : Object{
+  Real x, y;
+  Sup Sup(Real x, Real y)   {
+    Sup self;
+    self.$instanceInit_Sup(x;
+, y;
+);
+    return self;
+;
+    self = (Sup)Sys.allocObject(TYPE_ID(Sup));
+  }
+  Void $staticInit()   {
+  }
+  Real thing()   {
+    return 0.0;
+;
+  }
+  Sup $instanceInit_Sup(Real x, Real y)   {
+    self.x = x;
+    self.y = y;
+    return self;
+;
+  }
+}
+class Sys : Object{
+  Object allocObject(Int classId)   {
+    return nil;
+;
+  }
+  Object allocArray(Int arrayClassId, Int elementClassId, Int n)   {
+    return nil;
+;
+  }
+  String strCat(String s1, String s2)   {
+    return "";
+;
+  }
+  String strRepeat(String s1, Int repeatCount)   {
+    return "";
+;
+  }
+  Int strEq(String s1, String s2)   {
+    return 0;
+;
+  }
+  Int strLt(String s1, String s2)   {
+    return 0;
+;
+  }
+  Int strLeq(String s1, String s2)   {
+    return 0;
+;
+  }
+  Sys Sys()   {
+    Sys self;
+    self.$instanceInit_Sys();
+    return self;
+;
+    self = (Sys)Sys.allocObject(TYPE_ID(Sys));
+  }
+  Void $staticInit()   {
+  }
+  Sys $instanceInit_Sys()   {
+    return self;
+;
+  }
+}
+class Array : Object{
+  Int length;
+  Array Array(Int len)   {
+    Array self;
+    self.$instanceInit_Array(len;
+);
+    return self;
+;
+    self = (Array)Sys.allocObject(TYPE_ID(Array));
+  }
+  Void $staticInit()   {
+  }
+  Array $instanceInit_Array(Int len)   {
+    self.length = len;
+    return self;
+;
+  }
+}
+class Sub : Sup{
+  Int a, b;
+  static Int stat;
+  Sub Sub(Int a, Int b, Real x, Real y)   {
+    Sub self;
+    self.$instanceInit_Sub(a;
+, b;
+, x;
+, y;
+);
+    return self;
+;
+    self = (Sub)Sys.allocObject(TYPE_ID(Sub));
+  }
+  Void $staticInit()   {
+    Sub.stat = 123;
+  }
+  Int stuff()   {
+    return 1;
+;
+  }
+  Sub $instanceInit_Sub(Int a, Int b, Real x, Real y)   {
+    super.$instanceInit_Sup(x;
+, y;
+);
+    self.a = a;
+    self.b = b;
+    return self;
+;
+  }
+}

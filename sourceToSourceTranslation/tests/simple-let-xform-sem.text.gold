@@ -1,0 +1,32 @@
+PROGRAM coord=simple-let-xform.tl0:1:0 type=VOID
+  DEFN coord=simple-let-xform.tl0:1:0 name=f offset=0 scope=1 type=VOID
+    PARAMS arity=2 coord=simple-let-xform.tl0:1:6 type=VOID
+      PARAM coord=simple-let-xform.tl0:1:6 name=a offset=0 scope=2 type=INT
+      PARAM coord=simple-let-xform.tl0:1:8 name=b offset=1 scope=2 type=INT
+    APP coord=simple-let-xform.tl0:2:4 name=_0 offset=1 scope=1 type=INT
+      ARGS arity=4 coord=simple-let-xform.tl0:3:4 type=VOID
+        ADD coord=simple-let-xform.tl0:3:4 type=INT
+          REF coord=simple-let-xform.tl0:4:6 name=a offset=0 scope=2 type=INT
+          REF coord=simple-let-xform.tl0:5:6 name=a offset=0 scope=2 type=INT
+        ADD coord=simple-let-xform.tl0:6:4 type=INT
+          REF coord=simple-let-xform.tl0:7:6 name=b offset=1 scope=2 type=INT
+          REF coord=simple-let-xform.tl0:8:6 name=b offset=1 scope=2 type=INT
+        REF coord=simple-let-xform.tl0:9:4 name=a offset=0 scope=2 type=INT
+        REF coord=simple-let-xform.tl0:10:4 name=b offset=1 scope=2 type=INT
+  APP coord=simple-let-xform.tl0:13:2 name=f offset=0 scope=1 type=INT
+    ARGS arity=2 coord=simple-let-xform.tl0:14:2 type=VOID
+      INT coord=simple-let-xform.tl0:14:2 type=INT value=1
+      INT coord=simple-let-xform.tl0:15:2 type=INT value=2
+  DEFN coord=simple-let-xform.tl0:18:0 name=_0 offset=1 scope=1 type=VOID
+    PARAMS arity=4 coord=simple-let-xform.tl0:18:7 type=VOID
+      PARAM coord=simple-let-xform.tl0:18:7 name=x offset=0 scope=3 type=INT
+      PARAM coord=simple-let-xform.tl0:18:9 name=y offset=1 scope=3 type=INT
+      PARAM coord=simple-let-xform.tl0:18:11 name=a offset=2 scope=3 type=INT
+      PARAM coord=simple-let-xform.tl0:18:13 name=b offset=3 scope=3 type=INT
+    ADD coord=simple-let-xform.tl0:19:2 type=INT
+      ADD coord=simple-let-xform.tl0:20:4 type=INT
+        REF coord=simple-let-xform.tl0:21:6 name=x offset=0 scope=3 type=INT
+        REF coord=simple-let-xform.tl0:22:6 name=y offset=1 scope=3 type=INT
+      ADD coord=simple-let-xform.tl0:23:4 type=INT
+        REF coord=simple-let-xform.tl0:24:6 name=a offset=2 scope=3 type=INT
+        REF coord=simple-let-xform.tl0:25:6 name=b offset=3 scope=3 type=INT

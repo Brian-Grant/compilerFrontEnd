@@ -1,0 +1,13 @@
+Brian Grant
+
+Parses, lexes, and builds the ast for an object oriented language called 
+	Walnut
+
+Everything works. 
+Currently in an array construction, the following primitive type is allowed:
+  .... = Void[<expr>]; 
+This is okay for this project, and will be taken care
+of during the semantic checking.
+
+
+

@@ -1,0 +1,132 @@
+PROGRAM coord=let1-xform.tl0:1:0 type=VOID
+  DEFN coord=let1-xform.tl0:1:0 name=f offset=0 scope=1 type=VOID
+    PARAMS arity=2 coord=let1-xform.tl0:1:6 type=VOID
+      PARAM coord=let1-xform.tl0:1:6 name=a offset=0 scope=2 type=INT
+      PARAM coord=let1-xform.tl0:1:8 name=b offset=1 scope=2 type=INT
+    APP coord=let1-xform.tl0:2:4 name=_0 offset=3 scope=1 type=INT
+      ARGS arity=4 coord=let1-xform.tl0:3:4 type=VOID
+        ADD coord=let1-xform.tl0:3:4 type=INT
+          REF coord=let1-xform.tl0:4:6 name=a offset=0 scope=2 type=INT
+          REF coord=let1-xform.tl0:5:6 name=b offset=1 scope=2 type=INT
+        SUB coord=let1-xform.tl0:6:4 type=INT
+          REF coord=let1-xform.tl0:7:6 name=a offset=0 scope=2 type=INT
+          REF coord=let1-xform.tl0:8:6 name=b offset=1 scope=2 type=INT
+        REF coord=let1-xform.tl0:9:4 name=a offset=0 scope=2 type=INT
+        REF coord=let1-xform.tl0:10:4 name=b offset=1 scope=2 type=INT
+  APP coord=let1-xform.tl0:13:2 name=f offset=0 scope=1 type=INT
+    ARGS arity=2 coord=let1-xform.tl0:14:2 type=VOID
+      INT coord=let1-xform.tl0:14:2 type=INT value=2
+      INT coord=let1-xform.tl0:15:2 type=INT value=3
+  DEFN coord=let1-xform.tl0:18:0 name=g offset=1 scope=1 type=VOID
+    PARAMS arity=3 coord=let1-xform.tl0:18:6 type=VOID
+      PARAM coord=let1-xform.tl0:18:6 name=a offset=0 scope=3 type=INT
+      PARAM coord=let1-xform.tl0:18:8 name=b offset=1 scope=3 type=INT
+      PARAM coord=let1-xform.tl0:18:10 name=c offset=2 scope=3 type=INT
+    APP coord=let1-xform.tl0:19:4 name=_1 offset=4 scope=1 type=INT
+      ARGS arity=3 coord=let1-xform.tl0:20:4 type=VOID
+        ADD coord=let1-xform.tl0:20:4 type=INT
+          REF coord=let1-xform.tl0:21:6 name=a offset=0 scope=3 type=INT
+          INT coord=let1-xform.tl0:22:6 type=INT value=2
+        MUL coord=let1-xform.tl0:23:4 type=INT
+          REF coord=let1-xform.tl0:24:6 name=a offset=0 scope=3 type=INT
+          ADD coord=let1-xform.tl0:25:6 type=INT
+            REF coord=let1-xform.tl0:26:8 name=b offset=1 scope=3 type=INT
+            REF coord=let1-xform.tl0:27:8 name=c offset=2 scope=3 type=INT
+        REF coord=let1-xform.tl0:28:4 name=c offset=2 scope=3 type=INT
+  APP coord=let1-xform.tl0:31:2 name=g offset=1 scope=1 type=INT
+    ARGS arity=3 coord=let1-xform.tl0:32:2 type=VOID
+      INT coord=let1-xform.tl0:32:2 type=INT value=2
+      INT coord=let1-xform.tl0:33:2 type=INT value=2
+      INT coord=let1-xform.tl0:34:2 type=INT value=3
+  DEFN coord=let1-xform.tl0:37:0 name=h offset=2 scope=1 type=VOID
+    PARAMS arity=3 coord=let1-xform.tl0:37:6 type=VOID
+      PARAM coord=let1-xform.tl0:37:6 name=a offset=0 scope=4 type=INT
+      PARAM coord=let1-xform.tl0:37:8 name=b offset=1 scope=4 type=INT
+      PARAM coord=let1-xform.tl0:37:10 name=c offset=2 scope=4 type=INT
+    APP coord=let1-xform.tl0:38:4 name=_4 offset=7 scope=1 type=INT
+      ARGS arity=3 coord=let1-xform.tl0:39:4 type=VOID
+        APP coord=let1-xform.tl0:39:6 name=_2 offset=5 scope=1 type=INT
+          ARGS arity=3 coord=let1-xform.tl0:40:6 type=VOID
+            MUL coord=let1-xform.tl0:40:6 type=INT
+              REF coord=let1-xform.tl0:41:8 name=a offset=0 scope=4 type=INT
+              REF coord=let1-xform.tl0:42:8 name=b offset=1 scope=4 type=INT
+            MUL coord=let1-xform.tl0:43:6 type=INT
+              ADD coord=let1-xform.tl0:44:8 type=INT
+                REF coord=let1-xform.tl0:45:10 name=a offset=0 scope=4 type=INT
+                REF coord=let1-xform.tl0:46:10 name=b offset=1 scope=4 type=INT
+              REF coord=let1-xform.tl0:47:8 name=c offset=2 scope=4 type=INT
+            REF coord=let1-xform.tl0:48:6 name=c offset=2 scope=4 type=INT
+        INT coord=let1-xform.tl0:50:4 type=INT value=22
+        REF coord=let1-xform.tl0:51:4 name=c offset=2 scope=4 type=INT
+  APP coord=let1-xform.tl0:54:2 name=h offset=2 scope=1 type=INT
+    ARGS arity=3 coord=let1-xform.tl0:55:2 type=VOID
+      INT coord=let1-xform.tl0:55:2 type=INT value=3
+      INT coord=let1-xform.tl0:56:2 type=INT value=4
+      INT coord=let1-xform.tl0:57:2 type=INT value=5
+  DEFN coord=let1-xform.tl0:60:0 name=_0 offset=3 scope=1 type=VOID
+    PARAMS arity=4 coord=let1-xform.tl0:60:7 type=VOID
+      PARAM coord=let1-xform.tl0:60:7 name=x offset=0 scope=5 type=INT
+      PARAM coord=let1-xform.tl0:60:9 name=y offset=1 scope=5 type=INT
+      PARAM coord=let1-xform.tl0:60:11 name=a offset=2 scope=5 type=INT
+      PARAM coord=let1-xform.tl0:60:13 name=b offset=3 scope=5 type=INT
+    ADD coord=let1-xform.tl0:61:2 type=INT
+      MUL coord=let1-xform.tl0:62:4 type=INT
+        REF coord=let1-xform.tl0:63:6 name=x offset=0 scope=5 type=INT
+        REF coord=let1-xform.tl0:64:6 name=x offset=0 scope=5 type=INT
+      ADD coord=let1-xform.tl0:65:4 type=INT
+        MUL coord=let1-xform.tl0:66:6 type=INT
+          REF coord=let1-xform.tl0:67:8 name=x offset=0 scope=5 type=INT
+          REF coord=let1-xform.tl0:68:8 name=y offset=1 scope=5 type=INT
+        ADD coord=let1-xform.tl0:69:6 type=INT
+          MUL coord=let1-xform.tl0:70:8 type=INT
+            REF coord=let1-xform.tl0:71:10 name=y offset=1 scope=5 type=INT
+            REF coord=let1-xform.tl0:72:10 name=y offset=1 scope=5 type=INT
+          MUL coord=let1-xform.tl0:73:8 type=INT
+            REF coord=let1-xform.tl0:74:10 name=a offset=2 scope=5 type=INT
+            REF coord=let1-xform.tl0:75:10 name=b offset=3 scope=5 type=INT
+  DEFN coord=let1-xform.tl0:77:0 name=_1 offset=4 scope=1 type=VOID
+    PARAMS arity=3 coord=let1-xform.tl0:77:7 type=VOID
+      PARAM coord=let1-xform.tl0:77:7 name=a offset=0 scope=6 type=INT
+      PARAM coord=let1-xform.tl0:77:9 name=b offset=1 scope=6 type=INT
+      PARAM coord=let1-xform.tl0:77:11 name=c offset=2 scope=6 type=INT
+    SUB coord=let1-xform.tl0:78:2 type=INT
+      ADD coord=let1-xform.tl0:79:4 type=INT
+        REF coord=let1-xform.tl0:80:6 name=a offset=0 scope=6 type=INT
+        REF coord=let1-xform.tl0:81:6 name=b offset=1 scope=6 type=INT
+      REF coord=let1-xform.tl0:82:4 name=c offset=2 scope=6 type=INT
+  DEFN coord=let1-xform.tl0:84:0 name=_2 offset=5 scope=1 type=VOID
+    PARAMS arity=3 coord=let1-xform.tl0:84:7 type=VOID
+      PARAM coord=let1-xform.tl0:84:7 name=x offset=0 scope=7 type=INT
+      PARAM coord=let1-xform.tl0:84:9 name=b offset=1 scope=7 type=INT
+      PARAM coord=let1-xform.tl0:84:11 name=c offset=2 scope=7 type=INT
+    REM coord=let1-xform.tl0:85:2 type=INT
+      ADD coord=let1-xform.tl0:86:4 type=INT
+        REF coord=let1-xform.tl0:87:6 name=x offset=0 scope=7 type=INT
+        REF coord=let1-xform.tl0:88:6 name=b offset=1 scope=7 type=INT
+      REF coord=let1-xform.tl0:89:4 name=c offset=2 scope=7 type=INT
+  DEFN coord=let1-xform.tl0:91:0 name=_3 offset=6 scope=1 type=VOID
+    PARAMS arity=3 coord=let1-xform.tl0:91:7 type=VOID
+      PARAM coord=let1-xform.tl0:91:7 name=a offset=0 scope=8 type=INT
+      PARAM coord=let1-xform.tl0:91:9 name=b offset=1 scope=8 type=INT
+      PARAM coord=let1-xform.tl0:91:11 name=c offset=2 scope=8 type=INT
+    ADD coord=let1-xform.tl0:92:2 type=INT
+      SUB coord=let1-xform.tl0:93:4 type=INT
+        REF coord=let1-xform.tl0:94:6 name=a offset=0 scope=8 type=INT
+        REF coord=let1-xform.tl0:95:6 name=b offset=1 scope=8 type=INT
+      REF coord=let1-xform.tl0:96:4 name=c offset=2 scope=8 type=INT
+  DEFN coord=let1-xform.tl0:98:0 name=_4 offset=7 scope=1 type=VOID
+    PARAMS arity=3 coord=let1-xform.tl0:98:7 type=VOID
+      PARAM coord=let1-xform.tl0:98:7 name=a offset=0 scope=9 type=INT
+      PARAM coord=let1-xform.tl0:98:9 name=b offset=1 scope=9 type=INT
+      PARAM coord=let1-xform.tl0:98:11 name=c offset=2 scope=9 type=INT
+    SUB coord=let1-xform.tl0:99:2 type=INT
+      ADD coord=let1-xform.tl0:100:4 type=INT
+        REF coord=let1-xform.tl0:101:6 name=a offset=0 scope=9 type=INT
+        REF coord=let1-xform.tl0:102:6 name=b offset=1 scope=9 type=INT
+      APP coord=let1-xform.tl0:103:6 name=_3 offset=6 scope=1 type=INT
+        ARGS arity=3 coord=let1-xform.tl0:104:6 type=VOID
+          ADD coord=let1-xform.tl0:104:6 type=INT
+            REF coord=let1-xform.tl0:105:8 name=a offset=0 scope=9 type=INT
+            REF coord=let1-xform.tl0:106:8 name=c offset=2 scope=9 type=INT
+          INT coord=let1-xform.tl0:107:6 type=INT value=3
+          REF coord=let1-xform.tl0:108:6 name=c offset=2 scope=9 type=INT

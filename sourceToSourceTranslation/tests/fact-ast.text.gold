@@ -1,0 +1,32 @@
+PROGRAM coord=fact.tl0:2:0
+  DEFN coord=fact.tl0:2:0 name=fact
+    PARAMS arity=1 coord=fact.tl0:2:9
+      PARAM coord=fact.tl0:2:9 name=n
+    IF coord=fact.tl0:3:2
+      LE coord=fact.tl0:3:4
+        REF coord=fact.tl0:3:7 name=n
+        INT coord=fact.tl0:3:9 value=1
+      INT coord=fact.tl0:4:4 value=1
+      MUL coord=fact.tl0:5:4
+        REF coord=fact.tl0:5:6 name=n
+        APP coord=fact.tl0:5:9 name=fact
+          ARGS arity=1 coord=fact.tl0:5:14
+            SUB coord=fact.tl0:5:14
+              REF coord=fact.tl0:5:16 name=n
+              INT coord=fact.tl0:5:18 value=1
+  DEFN coord=fact.tl0:8:0 name=max
+    PARAMS arity=2 coord=fact.tl0:8:8
+      PARAM coord=fact.tl0:8:8 name=a
+      PARAM coord=fact.tl0:8:10 name=b
+    IF coord=fact.tl0:9:2
+      GT coord=fact.tl0:9:4
+        REF coord=fact.tl0:9:6 name=a
+        REF coord=fact.tl0:9:8 name=b
+      REF coord=fact.tl0:9:10 name=a
+      REF coord=fact.tl0:9:12 name=b
+  APP coord=fact.tl0:11:1 name=max
+    ARGS arity=2 coord=fact.tl0:11:5
+      APP coord=fact.tl0:11:6 name=fact
+        ARGS arity=1 coord=fact.tl0:11:11
+          INT coord=fact.tl0:11:11 value=5
+      INT coord=fact.tl0:11:14 value=100

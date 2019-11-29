@@ -1,0 +1,14 @@
+
+#shadow parameters
+fn (g a b c)  # 2 2 3
+  (let
+     a + a 2  # 4
+     b * a + b  c # 10
+   in
+     - + a  b c # (4 + 10) - 3
+   )
+;
+
+(g 2 2 3);  #11
+
+

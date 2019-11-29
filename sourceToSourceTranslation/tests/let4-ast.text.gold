@@ -1,0 +1,50 @@
+PROGRAM coord=let4.tl0:3:0
+  DEFN coord=let4.tl0:3:0 name=h
+    PARAMS arity=3 coord=let4.tl0:3:6
+      PARAM coord=let4.tl0:3:6 name=a
+      PARAM coord=let4.tl0:3:8 name=b
+      PARAM coord=let4.tl0:3:10 name=c
+    LET coord=let4.tl0:4:3
+      LETIDEXPR arity=2.0 coord=let4.tl0:5:5
+        REF coord=let4.tl0:5:5 name=a
+        LET coord=let4.tl0:5:8
+          LETIDEXPR arity=2.0 coord=let4.tl0:6:10
+            REF coord=let4.tl0:6:10 name=x
+            MUL coord=let4.tl0:6:12
+              REF coord=let4.tl0:6:14 name=a
+              REF coord=let4.tl0:6:16 name=b
+            REF coord=let4.tl0:7:10 name=b
+            MUL coord=let4.tl0:7:12
+              ADD coord=let4.tl0:7:14
+                REF coord=let4.tl0:7:16 name=a
+                REF coord=let4.tl0:7:18 name=b
+              REF coord=let4.tl0:7:20 name=c
+          REM coord=let4.tl0:9:10
+            ADD coord=let4.tl0:9:12
+              REF coord=let4.tl0:9:14 name=x
+              REF coord=let4.tl0:9:16 name=b
+            REF coord=let4.tl0:9:18 name=c
+        REF coord=let4.tl0:11:5 name=b
+        INT coord=let4.tl0:11:7 value=22
+      SUB coord=let4.tl0:13:5
+        ADD coord=let4.tl0:14:7
+          REF coord=let4.tl0:14:9 name=a
+          REF coord=let4.tl0:14:11 name=b
+        LET coord=let4.tl0:15:8
+          LETIDEXPR arity=2.0 coord=let4.tl0:16:10
+            REF coord=let4.tl0:16:10 name=a
+            ADD coord=let4.tl0:16:12
+              REF coord=let4.tl0:16:14 name=a
+              REF coord=let4.tl0:16:16 name=c
+            REF coord=let4.tl0:17:10 name=b
+            INT coord=let4.tl0:17:12 value=3
+          ADD coord=let4.tl0:19:10
+            SUB coord=let4.tl0:19:12
+              REF coord=let4.tl0:19:14 name=a
+              REF coord=let4.tl0:19:16 name=b
+            REF coord=let4.tl0:19:18 name=c
+  APP coord=let4.tl0:23:1 name=h
+    ARGS arity=3 coord=let4.tl0:23:3
+      INT coord=let4.tl0:23:3 value=3
+      INT coord=let4.tl0:23:5 value=4
+      INT coord=let4.tl0:23:7 value=5

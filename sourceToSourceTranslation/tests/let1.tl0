@@ -1,0 +1,47 @@
+#basic let
+fn (f a b) #2, 3
+  (let
+     x + a b  #5
+     y - a b  #-1
+   in
+     + * x x + * x y + * y y * a b  #5*5 +5*-1 + -1*-1 + 2*3 
+   )
+;
+
+(f 2 3);  #27
+
+#shadow parameters
+fn (g a b c)  # 2 2 3
+  (let
+     a + a 2  # 4
+     b * a + b  c # 10
+   in
+     - + a  b c # (4 + 10) - 3
+   )
+;
+
+(g 2 2 3);  #11
+
+#nested let's
+fn (h a b c)  # 3 4 5
+  (let
+     a (let
+          x * a b     # 12
+	  b * + a b c # 35
+	in
+	  % + x b c   # 2
+       )
+     b 22
+   in
+     -
+       + a b   #24
+       (let
+          a + a c # 7
+          b 3     # 3
+        in
+          + - a b c # 7 - 3 + 5
+        ) # 9
+  ) #24 - 9
+;
+(h 3 4 5);  #15 
+     

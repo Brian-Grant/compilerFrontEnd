@@ -1,0 +1,20 @@
+semantic-errors.tl0:3:0: multiple definition for "f."
+previous definition at semantic-errors.tl0:1:0.
+fn (f a b) + a b ;  #multiple def
+^
+semantic-errors.tl0:5:10: multiple definition for "a."
+previous definition at semantic-errors.tl0:5:6.
+fn (g a b a)        #multiple param def
+          ^
+semantic-errors.tl0:6:4: INT type expected for f
+  + f               #type error
+    ^
+semantic-errors.tl0:7:6: undefined identifier c
+    * c             #undefined identifier
+      ^
+semantic-errors.tl0:8:7: a is not a function
+      (a b)         #type error
+       ^
+semantic-errors.tl0:11:1: incorrect number 1 of arguments for f; expected 2
+(f 1);              #incorrect number of args
+ ^

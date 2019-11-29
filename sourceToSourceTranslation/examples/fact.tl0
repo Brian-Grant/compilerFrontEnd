@@ -1,0 +1,12 @@
+#simple recursive factorial
+fn (fact n)
+  ? <= n 1
+    1
+    * n (fact - n 1) 
+;
+
+fn (max a b)
+  ? > a b a b
+;
+(max (fact 5) 100);
+

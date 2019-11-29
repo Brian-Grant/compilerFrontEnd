@@ -1,0 +1,10 @@
+#basic let
+fn (f a b) #2, 3
+  (let
+     x + a a  #5
+     y + b b  #-1
+   in
+    + + x y + a let
+   )
+;
+(f 1 2);

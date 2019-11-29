@@ -1,0 +1,10 @@
+Name:		Brian Grant
+
+Source to Source translation from a simple language called let-tl0, which allows
+a language feature called let statements to a language called vanilla-tl0 
+which does not allow these let statements. All let statements are transformed 
+into an allowable and equivalent form in vanilla-tl0
+
+Everything is working. There are 6 let.tl0 files and the 
+resulting 6 let-xform.tl0 files.
+

@@ -1,0 +1,11 @@
+Brian Grant
+Semantic Checker
+
+I left a few commented out debug statements, and unused code because they
+ dont cause much harm and if anything might provide a window into my thought 
+process.
+
+in the tests directory check out tests.walnut to see a small portion of tests
+
+
+

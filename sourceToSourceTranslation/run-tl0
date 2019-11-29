@@ -1,0 +1,19 @@
+#!/bin/sh
+
+#Compile, assemble and run tl0 program given by first argument.  Leave
+#assembly language .j file in current directory.
+
+JRUN=$HOME/cs572/bin/jrun
+
+if [ $# -ne 1 ]
+then
+  echo "usage: $0 TL0_SRC_FILE"
+  exit 1
+fi   
+
+JFILE=`basename $1 .tl0`.j
+CLASSNAME=cs572.Tl0
+if ./tl0 $1 > $JFILE
+then
+  $JRUN $CLASSNAME $JFILE
+fi

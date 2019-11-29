@@ -1,0 +1,50 @@
+PROGRAM coord=let4.tl0:3:0 type=VOID
+  DEFN coord=let4.tl0:3:0 name=h offset=0 scope=1 type=VOID
+    PARAMS arity=3 coord=let4.tl0:3:6 type=VOID
+      PARAM coord=let4.tl0:3:6 name=a offset=0 scope=2 type=INT
+      PARAM coord=let4.tl0:3:8 name=b offset=1 scope=2 type=INT
+      PARAM coord=let4.tl0:3:10 name=c offset=2 scope=2 type=INT
+    LET coord=let4.tl0:4:3 type=LET
+      LETIDEXPR arity=2.0 coord=let4.tl0:5:5
+        REF coord=let4.tl0:5:5 name=a offset=0 scope=4 type=INT
+        LET coord=let4.tl0:5:8 type=LET
+          LETIDEXPR arity=2.0 coord=let4.tl0:6:10
+            REF coord=let4.tl0:6:10 name=x offset=0 scope=3 type=INT
+            MUL coord=let4.tl0:6:12 type=INT
+              REF coord=let4.tl0:6:14 name=a offset=0 scope=2 type=INT
+              REF coord=let4.tl0:6:16 name=b offset=1 scope=2 type=INT
+            REF coord=let4.tl0:7:10 name=b offset=2 scope=3 type=INT
+            MUL coord=let4.tl0:7:12 type=INT
+              ADD coord=let4.tl0:7:14 type=INT
+                REF coord=let4.tl0:7:16 name=a offset=0 scope=2 type=INT
+                REF coord=let4.tl0:7:18 name=b offset=1 scope=2 type=INT
+              REF coord=let4.tl0:7:20 name=c offset=2 scope=2 type=INT
+          REM coord=let4.tl0:9:10 type=INT
+            ADD coord=let4.tl0:9:12 type=INT
+              REF coord=let4.tl0:9:14 name=x offset=0 scope=3 type=INT
+              REF coord=let4.tl0:9:16 name=b offset=2 scope=3 type=INT
+            REF coord=let4.tl0:9:18 name=c offset=2 scope=2 type=INT
+        REF coord=let4.tl0:11:5 name=b offset=2 scope=4 type=INT
+        INT coord=let4.tl0:11:7 type=INT value=22
+      SUB coord=let4.tl0:13:5 type=INT
+        ADD coord=let4.tl0:14:7 type=INT
+          REF coord=let4.tl0:14:9 name=a offset=0 scope=4 type=INT
+          REF coord=let4.tl0:14:11 name=b offset=2 scope=4 type=INT
+        LET coord=let4.tl0:15:8 type=LET
+          LETIDEXPR arity=2.0 coord=let4.tl0:16:10
+            REF coord=let4.tl0:16:10 name=a offset=0 scope=5 type=INT
+            ADD coord=let4.tl0:16:12 type=INT
+              REF coord=let4.tl0:16:14 name=a offset=0 scope=4 type=INT
+              REF coord=let4.tl0:16:16 name=c offset=2 scope=2 type=INT
+            REF coord=let4.tl0:17:10 name=b offset=2 scope=5 type=INT
+            INT coord=let4.tl0:17:12 type=INT value=3
+          ADD coord=let4.tl0:19:10 type=INT
+            SUB coord=let4.tl0:19:12 type=INT
+              REF coord=let4.tl0:19:14 name=a offset=0 scope=5 type=INT
+              REF coord=let4.tl0:19:16 name=b offset=2 scope=5 type=INT
+            REF coord=let4.tl0:19:18 name=c offset=2 scope=2 type=INT
+  APP coord=let4.tl0:23:1 name=h offset=0 scope=1 type=INT
+    ARGS arity=3 coord=let4.tl0:23:3 type=VOID
+      INT coord=let4.tl0:23:3 type=INT value=3
+      INT coord=let4.tl0:23:5 type=INT value=4
+      INT coord=let4.tl0:23:7 type=INT value=5

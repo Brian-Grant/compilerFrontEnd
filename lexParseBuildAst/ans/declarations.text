@@ -1,0 +1,58 @@
+PROGRAM coord=examples/declarations.walnut:1:0
+  DEFN coord=examples/declarations.walnut:1:0 isStatic=False kind=function name=f
+    TYPE coord=examples/declarations.walnut:1:0 rank=0 type_name=Real
+    PARAMS coord=examples/declarations.walnut:1:7
+      PARAM coord=examples/declarations.walnut:1:7 name=a
+        TYPE coord=examples/declarations.walnut:1:7 rank=0 type_name=Int
+      INIT_PARAM coord=examples/declarations.walnut:1:14 name=b
+        TYPE coord=examples/declarations.walnut:1:14 rank=0 type_name=Real
+        INT coord=examples/declarations.walnut:1:23 value=2
+    BLOCK coord=examples/declarations.walnut:1:26
+      RETURN coord=examples/declarations.walnut:2:2
+        OP2 coord=examples/declarations.walnut:2:9 op=ADD
+          REF coord=examples/declarations.walnut:2:9 name=a
+          REF coord=examples/declarations.walnut:2:13 name=b
+  CLASS coord=examples/declarations.walnut:5:0 super_name=C1 type_name=C
+    DECLS coord=examples/declarations.walnut:6:2 isStatic=False kind=var
+      TYPE coord=examples/declarations.walnut:6:2 rank=0 type_name=$inferred
+      INIT_DECL coord=examples/declarations.walnut:6:6 name=x
+        NEW_ARRAY coord=examples/declarations.walnut:6:10 rank=2 type_name=Int
+          INT coord=examples/declarations.walnut:6:14 value=1
+          INT coord=examples/declarations.walnut:6:17 value=2
+    DECLS coord=examples/declarations.walnut:7:2 isStatic=False kind=var
+      TYPE coord=examples/declarations.walnut:7:6 rank=2 type_name=Int
+      INIT_DECL coord=examples/declarations.walnut:7:14 name=a
+        NEW_ARRAY coord=examples/declarations.walnut:7:18 rank=2 type_name=Int
+          INT coord=examples/declarations.walnut:7:22 value=10
+          INT coord=examples/declarations.walnut:7:26 value=20
+      INIT_DECL coord=examples/declarations.walnut:8:14 name=b
+        INITS coord=examples/declarations.walnut:8:18
+          INITS coord=examples/declarations.walnut:8:20
+            INT coord=examples/declarations.walnut:8:22 value=2
+            INT coord=examples/declarations.walnut:8:25 value=3
+          INITS coord=examples/declarations.walnut:8:30
+            INT coord=examples/declarations.walnut:8:32 value=1
+            INT coord=examples/declarations.walnut:8:35 value=2
+          INITS coord=examples/declarations.walnut:8:40
+            INT coord=examples/declarations.walnut:8:41 value=2
+            INT coord=examples/declarations.walnut:8:44 value=3
+    DEFN coord=examples/declarations.walnut:9:2 isStatic=True kind=constructor name=C
+      TYPE coord=examples/declarations.walnut:9:2 rank=0 type_name=$inferred
+      PARAMS coord=examples/declarations.walnut:9:4
+        PARAM coord=examples/declarations.walnut:9:4 name=a
+          TYPE coord=examples/declarations.walnut:9:4 rank=0 type_name=Real
+        INIT_PARAM coord=examples/declarations.walnut:9:12 name=b
+          TYPE coord=examples/declarations.walnut:9:12 rank=1 type_name=Int
+          INITS coord=examples/declarations.walnut:9:22
+            INT coord=examples/declarations.walnut:9:24 value=1
+            INT coord=examples/declarations.walnut:9:27 value=2
+            INT coord=examples/declarations.walnut:9:30 value=3
+      BLOCK coord=examples/declarations.walnut:9:35
+    DEFN coord=examples/declarations.walnut:11:2 isStatic=True kind=function name=f
+      TYPE coord=examples/declarations.walnut:11:9 rank=0 type_name=Void
+      PARAMS coord=examples/declarations.walnut:11:16
+        PARAM coord=examples/declarations.walnut:11:16 name=a
+          TYPE coord=examples/declarations.walnut:11:16 rank=0 type_name=C
+        PARAM coord=examples/declarations.walnut:11:21 name=b
+          TYPE coord=examples/declarations.walnut:11:21 rank=0 type_name=C1
+      BLOCK coord=examples/declarations.walnut:11:27

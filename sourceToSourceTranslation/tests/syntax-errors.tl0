@@ -1,0 +1,4 @@
+fn (f a, b)  #bad token
+;
++ a b + ;  #syntax error
+fn (f a b) + a b c; #syntax error

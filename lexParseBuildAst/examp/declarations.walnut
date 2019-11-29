@@ -1,0 +1,13 @@
+Real f(Int a, Real b = 2) {
+  return a + b;
+}
+
+class C : C1 {
+  var x = Int[1][2];
+  var Int[][] a = Int[10][20],
+              b = { { 2, 3 }, { 1, 2 }, {2, 3 } };
+  C(Real a, Int[] b = { 1, 2, 3 }) { }
+
+  static Void f(C a, C1 b) { }
+  
+}

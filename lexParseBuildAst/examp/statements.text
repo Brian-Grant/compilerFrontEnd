@@ -1,0 +1,48 @@
+PROGRAM coord=examp/statements.walnut:1:0
+  WHILE coord=examp/statements.walnut:1:0
+    INT coord=examp/statements.walnut:1:7 value=1
+    BLOCK coord=examp/statements.walnut:1:10
+  IF coord=examp/statements.walnut:2:0
+    INT coord=examp/statements.walnut:2:4 value=1
+    BLOCK coord=examp/statements.walnut:2:7
+      REF coord=examp/statements.walnut:2:9 name=a
+    BLOCK coord=examp/statements.walnut:2:0
+  IF coord=examp/statements.walnut:3:0
+    INT coord=examp/statements.walnut:3:4 value=1
+    BLOCK coord=examp/statements.walnut:3:7
+      REF coord=examp/statements.walnut:3:8 name=x
+    BLOCK coord=examp/statements.walnut:3:17
+      REF coord=examp/statements.walnut:3:18 name=y
+  RETURN coord=examp/statements.walnut:4:0
+    VOID coord=examp/statements.walnut:4:0
+  RETURN coord=examp/statements.walnut:5:0
+    INT coord=examp/statements.walnut:5:7 value=42
+  BLOCK coord=examp/statements.walnut:8:0
+    ASSIGN coord=examp/statements.walnut:9:2
+      REF coord=examp/statements.walnut:9:2 name=a
+      OP2 coord=examp/statements.walnut:9:6 op=ADD
+        INT coord=examp/statements.walnut:9:6 value=1
+        INT coord=examp/statements.walnut:9:10 value=2
+    IF coord=examp/statements.walnut:10:2
+      REF coord=examp/statements.walnut:10:6 name=a
+      BLOCK coord=examp/statements.walnut:10:9
+        ASSIGN coord=examp/statements.walnut:11:4
+          REF coord=examp/statements.walnut:11:4 name=a
+          OP2 coord=examp/statements.walnut:11:8 op=ADD
+            INT coord=examp/statements.walnut:11:8 value=99
+            OP2 coord=examp/statements.walnut:11:13 op=MUL
+              INT coord=examp/statements.walnut:11:13 value=2
+              INT coord=examp/statements.walnut:11:15 value=3
+      BLOCK coord=examp/statements.walnut:13:7
+        WHILE coord=examp/statements.walnut:14:4
+          OP2 coord=examp/statements.walnut:14:11 op=LT
+            STRING coord=examp/statements.walnut:14:11 value="ab\nc"
+            INT coord=examp/statements.walnut:14:21 value=4
+          BLOCK coord=examp/statements.walnut:14:24
+            ASSIGN coord=examp/statements.walnut:15:6
+              REF coord=examp/statements.walnut:15:6 name=a
+              OP2 coord=examp/statements.walnut:15:10 op=MUL
+                OP2 coord=examp/statements.walnut:15:11 op=ADD
+                  INT coord=examp/statements.walnut:15:11 value=99
+                  INT coord=examp/statements.walnut:15:16 value=2
+                INT coord=examp/statements.walnut:15:19 value=3

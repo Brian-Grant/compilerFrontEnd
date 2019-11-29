@@ -1,0 +1,3 @@
+let-syntax-errors.tl0:7:16: Expression expected
+    + + x y + a let
+                ^

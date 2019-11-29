@@ -1,0 +1,155 @@
+#!/usr/bin/env python3.7
+
+import contextlib, getopt, re, sys
+import xml.etree.ElementTree as ET
+
+from lexer import Lexer
+from parser import Parser, SrcBuilder
+from semchk import SemanticChecker
+from let_transform import LetTransform
+from jvmgen import JvmGen
+
+OPTS = {
+    'tokens': {
+        'short': 't',
+        'arg': 'TOKEN_OUTPUT_FILE',
+        'doc': 'write tokens to TOKEN_OUTPUT_FILE and exit',
+    },
+    'ast': {
+        'short': 'a',
+        'arg': 'AST_OUTPUT_FILE',
+        'doc': 'write initial AST to AST_OUTPUT_FILE and exit',
+    },
+    'format': {
+        'short': 'f',
+        'arg': 'text|xml|tl0',
+        'doc': 'set format for AST_OUTPUT_FILE (default text)'
+    },
+    'let': {
+        'short': 'L',
+        'arg': 'AST_OUTPUT_FILE',
+        'doc': 'transform AST to remove let; write to AST_OUTPUT_FILE and exit',
+    },
+    'sem': {
+        'short': 's',
+        'arg': 'AST_OUTPUT_FILE',
+        'doc': 'write semantically annotated AST to AST_OUTPUT_FILE and exit',
+    },
+    'help': {
+        'short': 'h',
+        'doc': 'print usage message',
+    },
+}
+
+def opts_specs():
+    longs, shorts = [], ''
+    for (long, info) in OPTS.items():
+        has_arg = info.get('arg', '')
+        if info.get('short', ''):
+          shorts += f'{info["short"]}{has_arg and ":"}'
+          longs.append(f'{long}{has_arg and "="}')
+    return (shorts, longs)
+
+def opts_help():
+    help = 'OPTIONS\n'
+    indent = ' ' * 2
+    for long in sorted(OPTS.keys()):
+        info = OPTS[long];
+        arg, short = info.get('arg', ''), info.get('short', '')
+        doc = info.get('doc', '')
+        help += indent
+        if short: help += f'-{short} {arg} | '
+        help += f'--{long}{arg and "="}{arg}\n'
+        if doc: help += f'{indent*2}{doc}\n'
+    help += 'Specify output file as - for stdout\n'
+    return help
+
+def usage(prog):
+    sys.stderr.write(f'usage: {prog} [OPTIONS] TL0-FILE...\n{opts_help()}')
+    sys.exit(1)
+
+def get_opts(opts_list):
+    shorts_to_long = {}
+    for (long, info) in OPTS.items():
+        if info.get('short', ''): shorts_to_long[info['short']] = long
+    opts = {}
+    for opt, val in opts_list:
+        opt = re.compile('^--?').sub('', opt)
+        long = opt if OPTS.get(opt, '') else shorts_to_long[opt]
+        opts[long] = val or True
+    return opts
+
+def check_opts(opts, files):
+    for opt, value in opts.items():
+        if OPTS[opt]['arg'].endswith('FILE') and value in files:
+            sys.stderr.write(f'{opt}={value} would override source {value}\n')
+            return False
+        elif ('|' in OPTS[opt]['arg'] and
+              not value in OPTS[opt]['arg'].split('|')):
+            sys.stderr.write(f'{opt} value {value} not in {OPTS[opt]["arg"]}\n')
+            return False
+    return True
+
+@contextlib.contextmanager
+def open_file_or_stdio(filename, mode="rU"):
+    """if filename is '-', open stdio stream, else normal open()"""
+    if filename == '-':
+        fh = sys.stdout if mode.startswith('w') else sys.stdin
+    else:
+        fh = open(filename, mode)
+    try:
+        yield fh
+    finally:
+        if fh and filename != '-': fh.close()
+
+
+def out_ast(ast, astfile, format=None):
+    if not format:
+        if astfile.endswith('.xml'): format = 'xml'
+        elif astfile.endswith('.tl0'): format = 'tl0'
+        else: format = 'text'
+    if format == 'text': content = str(ast)
+    elif format == 'xml': content = ast.xml()
+    else: content = SrcBuilder().src(ast)
+    with open_file_or_stdio(astfile, 'w') as f:
+        f.write(content)
+    sys.exit(0)
+
+
+def main():
+    args = sys.argv
+    if len(args) == 1: usage(args[0])
+    try:
+        (opts_list, files) = getopt.gnu_getopt(args[1:], *opts_specs())
+    except getopt.GetoptError as err:
+        print(err)
+        usage(args[0])
+    opts = get_opts(opts_list)
+    if not check_opts(opts, files): usage(args[0])
+    if opts.get('help', '') or len(files) == 0: usage(args[0])
+    lexer = Lexer(files)
+    if opts.get('tokens', ''):
+        with open(opts['tokens'], 'w') as f:
+            for tok in lexer.tokens(): f.write(f'{tok}\n');
+        sys.exit(0)
+    format = opts.get('format', None)
+    parser = Parser(lexer)
+    (ast, errors) = parser.parse()
+    if not errors:
+        if opts.get('ast', ''): out_ast(ast, opts['ast'], format)
+        checker = SemanticChecker()
+        errors += checker.check_and_annotate(ast)
+    if not errors:
+        if opts.get('sem', ''): out_ast(ast, opts['sem'], format)
+        transformed_ast = LetTransform().transform(ast)
+        if opts.get('let', ''): out_ast(transformed_ast, opts['let'], format)
+        code = JvmGen().gen(transformed_ast)
+    if errors:
+        for error in errors:
+            msg = lexer.diagnostic(*error)
+            sys.stderr.write(msg)
+        sys.exit(1)
+    else:
+        print(code)
+
+main()

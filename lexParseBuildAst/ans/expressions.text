@@ -1,0 +1,51 @@
+PROGRAM coord=examples/expressions.walnut:1:0
+  ASSIGN coord=examples/expressions.walnut:1:0
+    REF coord=examples/expressions.walnut:1:0 name=a
+    OP2 coord=examples/expressions.walnut:1:4 op=MUL
+      CAST coord=examples/expressions.walnut:1:4
+        TYPE coord=examples/expressions.walnut:1:5 rank=0 type_name=Int
+        APP coord=examples/expressions.walnut:1:10
+          REF coord=examples/expressions.walnut:1:10 name=f
+          REF coord=examples/expressions.walnut:1:12 name=a
+          KWARG cooord=examples/expressions.walnut:1:15 name=b
+            INT coord=examples/expressions.walnut:1:18 value=2
+      INT coord=examples/expressions.walnut:1:23 value=3
+  ASSIGN coord=examples/expressions.walnut:2:0
+    REF coord=examples/expressions.walnut:2:0 name=a
+    COND coord=examples/expressions.walnut:2:4
+      OP2 coord=examples/expressions.walnut:2:4 op=EQ
+        REF coord=examples/expressions.walnut:2:4 name=a
+        REF coord=examples/expressions.walnut:2:9 name=b
+      OP2 coord=examples/expressions.walnut:2:13 op=ADD
+        OP2 coord=examples/expressions.walnut:2:13 op=REM
+          REF coord=examples/expressions.walnut:2:13 name=c
+          REF coord=examples/expressions.walnut:2:17 name=d
+        INT coord=examples/expressions.walnut:2:21 value=3
+      COND coord=examples/expressions.walnut:2:25
+        OP2 coord=examples/expressions.walnut:2:25 op=NE
+          REF coord=examples/expressions.walnut:2:25 name=a
+          REF coord=examples/expressions.walnut:2:30 name=b
+        OP2 coord=examples/expressions.walnut:2:34 op=OR
+          OP2 coord=examples/expressions.walnut:2:34 op=AND
+            REF coord=examples/expressions.walnut:2:34 name=c
+            REF coord=examples/expressions.walnut:2:39 name=d
+          OP1 coord=examples/expressions.walnut:2:44 op=NOT
+            INT coord=examples/expressions.walnut:2:45 value=3
+        INDEX coord=examples/expressions.walnut:2:49
+          INDEX coord=examples/expressions.walnut:2:49
+            REF coord=examples/expressions.walnut:2:49 name=a
+            INT coord=examples/expressions.walnut:2:51 value=1
+          REF coord=examples/expressions.walnut:2:54 name=c
+  OP2 coord=examples/expressions.walnut:3:0 op=ADD
+    INDEX coord=examples/expressions.walnut:3:0
+      ACCESS coord=examples/expressions.walnut:3:0 name=a
+        NEW_OBJ coord=examples/expressions.walnut:3:0 type_name=C
+          OP2 coord=examples/expressions.walnut:3:2 op=ADD
+            INT coord=examples/expressions.walnut:3:2 value=1
+            INT coord=examples/expressions.walnut:3:6 value=2
+          KWARG cooord=examples/expressions.walnut:3:9 name=a
+            OP2 coord=examples/expressions.walnut:3:12 op=MUL
+              INT coord=examples/expressions.walnut:3:12 value=3
+              REF coord=examples/expressions.walnut:3:14 name=x
+      INT coord=examples/expressions.walnut:3:19 value=10
+    INT coord=examples/expressions.walnut:3:25 value=5

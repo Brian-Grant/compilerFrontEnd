@@ -1,0 +1,16 @@
+fn (f a b) + a b ;
+
+fn (f a b) + a b ;  #multiple def
+
+fn (g a b a)        #multiple param def
+  + f               #type error
+    * c             #undefined identifier
+      (a b)         #type error
+; 
+
+(f 1);              #incorrect number of args
+
+
+
+
+

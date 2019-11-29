@@ -1,0 +1,9 @@
+syntax-errors.tl0:1:7: syntax error: expecting ')'
+fn (f a, b)  #bad token
+       ^
+syntax-errors.tl0:3:6: syntax error: expecting 'SEMI'
++ a b + ;  #syntax error
+      ^
+syntax-errors.tl0:4:17: syntax error: expecting 'SEMI'
+fn (f a b) + a b c; #syntax error
+                 ^

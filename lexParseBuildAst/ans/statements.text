@@ -1,0 +1,48 @@
+PROGRAM coord=examples/statements.walnut:1:0
+  WHILE coord=examples/statements.walnut:1:0
+    INT coord=examples/statements.walnut:1:7 value=1
+    BLOCK coord=examples/statements.walnut:1:10
+  IF coord=examples/statements.walnut:2:0
+    INT coord=examples/statements.walnut:2:4 value=1
+    BLOCK coord=examples/statements.walnut:2:7
+      REF coord=examples/statements.walnut:2:9 name=a
+    BLOCK coord=examples/statements.walnut:2:12
+  IF coord=examples/statements.walnut:3:0
+    INT coord=examples/statements.walnut:3:4 value=1
+    BLOCK coord=examples/statements.walnut:3:7
+      REF coord=examples/statements.walnut:3:8 name=x
+    BLOCK coord=examples/statements.walnut:3:17
+      REF coord=examples/statements.walnut:3:18 name=y
+  RETURN coord=examples/statements.walnut:4:0
+    VOID coord=examples/statements.walnut:4:0
+  RETURN coord=examples/statements.walnut:5:0
+    INT coord=examples/statements.walnut:5:7 value=42
+  BLOCK coord=examples/statements.walnut:8:0
+    ASSIGN coord=examples/statements.walnut:9:2
+      REF coord=examples/statements.walnut:9:2 name=a
+      OP2 coord=examples/statements.walnut:9:6 op=ADD
+        INT coord=examples/statements.walnut:9:6 value=1
+        INT coord=examples/statements.walnut:9:10 value=2
+    IF coord=examples/statements.walnut:10:2
+      REF coord=examples/statements.walnut:10:6 name=a
+      BLOCK coord=examples/statements.walnut:10:9
+        ASSIGN coord=examples/statements.walnut:11:4
+          REF coord=examples/statements.walnut:11:4 name=a
+          OP2 coord=examples/statements.walnut:11:8 op=ADD
+            INT coord=examples/statements.walnut:11:8 value=99
+            OP2 coord=examples/statements.walnut:11:13 op=MUL
+              INT coord=examples/statements.walnut:11:13 value=2
+              INT coord=examples/statements.walnut:11:15 value=3
+      BLOCK coord=examples/statements.walnut:13:7
+        WHILE coord=examples/statements.walnut:14:4
+          OP2 coord=examples/statements.walnut:14:11 op=LT
+            STRING coord=examples/statements.walnut:14:11 value="ab\nc"
+            INT coord=examples/statements.walnut:14:21 value=4
+          BLOCK coord=examples/statements.walnut:14:24
+            ASSIGN coord=examples/statements.walnut:15:6
+              REF coord=examples/statements.walnut:15:6 name=a
+              OP2 coord=examples/statements.walnut:15:10 op=MUL
+                OP2 coord=examples/statements.walnut:15:11 op=ADD
+                  INT coord=examples/statements.walnut:15:11 value=99
+                  INT coord=examples/statements.walnut:15:16 value=2
+                INT coord=examples/statements.walnut:15:19 value=3

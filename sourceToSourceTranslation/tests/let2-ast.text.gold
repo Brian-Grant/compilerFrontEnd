@@ -1,0 +1,34 @@
+PROGRAM coord=let2.tl0:2:0
+  DEFN coord=let2.tl0:2:0 name=f
+    PARAMS arity=2 coord=let2.tl0:2:6
+      PARAM coord=let2.tl0:2:6 name=a
+      PARAM coord=let2.tl0:2:8 name=b
+    LET coord=let2.tl0:3:3
+      LETIDEXPR arity=2.0 coord=let2.tl0:4:5
+        REF coord=let2.tl0:4:5 name=x
+        ADD coord=let2.tl0:4:7
+          REF coord=let2.tl0:4:9 name=a
+          REF coord=let2.tl0:4:11 name=b
+        REF coord=let2.tl0:5:5 name=y
+        SUB coord=let2.tl0:5:7
+          REF coord=let2.tl0:5:9 name=a
+          REF coord=let2.tl0:5:11 name=b
+      ADD coord=let2.tl0:7:5
+        MUL coord=let2.tl0:7:7
+          REF coord=let2.tl0:7:9 name=x
+          REF coord=let2.tl0:7:11 name=x
+        ADD coord=let2.tl0:7:13
+          MUL coord=let2.tl0:7:15
+            REF coord=let2.tl0:7:17 name=x
+            REF coord=let2.tl0:7:19 name=y
+          ADD coord=let2.tl0:7:21
+            MUL coord=let2.tl0:7:23
+              REF coord=let2.tl0:7:25 name=y
+              REF coord=let2.tl0:7:27 name=y
+            MUL coord=let2.tl0:7:29
+              REF coord=let2.tl0:7:31 name=a
+              REF coord=let2.tl0:7:33 name=b
+  APP coord=let2.tl0:11:1 name=f
+    ARGS arity=2 coord=let2.tl0:11:3
+      INT coord=let2.tl0:11:3 value=2
+      INT coord=let2.tl0:11:5 value=3

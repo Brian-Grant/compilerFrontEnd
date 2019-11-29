@@ -1,0 +1,57 @@
+PROGRAM coord=examples/fact.walnut:1:0
+  DEFN coord=examples/fact.walnut:1:0 isStatic=False kind=function name=recFact
+    TYPE coord=examples/fact.walnut:1:0 rank=0 type_name=Int
+    PARAMS coord=examples/fact.walnut:1:12
+      PARAM coord=examples/fact.walnut:1:12 name=n
+        TYPE coord=examples/fact.walnut:1:12 rank=0 type_name=Int
+    BLOCK coord=examples/fact.walnut:1:19
+      RETURN coord=examples/fact.walnut:2:2
+        COND coord=examples/fact.walnut:2:9
+          OP2 coord=examples/fact.walnut:2:9 op=LE
+            REF coord=examples/fact.walnut:2:9 name=n
+            INT coord=examples/fact.walnut:2:14 value=1
+          INT coord=examples/fact.walnut:2:18 value=1
+          OP2 coord=examples/fact.walnut:2:22 op=MUL
+            REF coord=examples/fact.walnut:2:22 name=n
+            APP coord=examples/fact.walnut:2:26
+              REF coord=examples/fact.walnut:2:26 name=recFact
+              OP2 coord=examples/fact.walnut:2:34 op=SUB
+                REF coord=examples/fact.walnut:2:34 name=n
+                INT coord=examples/fact.walnut:2:38 value=1
+  DEFN coord=examples/fact.walnut:5:0 isStatic=False kind=function name=iterFact
+    TYPE coord=examples/fact.walnut:5:0 rank=0 type_name=Int
+    PARAMS coord=examples/fact.walnut:5:13
+      PARAM coord=examples/fact.walnut:5:13 name=n
+        TYPE coord=examples/fact.walnut:5:13 rank=0 type_name=Int
+    BLOCK coord=examples/fact.walnut:5:20
+      DECLS coord=examples/fact.walnut:6:2 isStatic=False kind=var
+        TYPE coord=examples/fact.walnut:6:2 rank=0 type_name=$inferred
+        INIT_DECL coord=examples/fact.walnut:6:6 name=f
+          INT coord=examples/fact.walnut:6:10 value=1
+        INIT_DECL coord=examples/fact.walnut:6:13 name=i
+          INT coord=examples/fact.walnut:6:17 value=2
+      WHILE coord=examples/fact.walnut:7:2
+        OP2 coord=examples/fact.walnut:7:9 op=LT
+          REF coord=examples/fact.walnut:7:9 name=i
+          REF coord=examples/fact.walnut:7:13 name=n
+        BLOCK coord=examples/fact.walnut:7:16
+          ASSIGN coord=examples/fact.walnut:8:4
+            REF coord=examples/fact.walnut:8:4 name=f
+            OP2 coord=examples/fact.walnut:8:8 op=MUL
+              REF coord=examples/fact.walnut:8:8 name=f
+              INT coord=examples/fact.walnut:8:12 value=2
+          ASSIGN coord=examples/fact.walnut:9:4
+            REF coord=examples/fact.walnut:9:4 name=i
+            OP2 coord=examples/fact.walnut:9:8 op=ADD
+              REF coord=examples/fact.walnut:9:8 name=i
+              INT coord=examples/fact.walnut:9:12 value=1
+      RETURN coord=examples/fact.walnut:11:2
+        REF coord=examples/fact.walnut:11:9 name=f
+  APP coord=examples/fact.walnut:14:0
+    REF coord=examples/fact.walnut:14:0 name=recFact
+    INT coord=examples/fact.walnut:14:8 value=4
+  APP coord=examples/fact.walnut:15:0
+    REF coord=examples/fact.walnut:15:0 name=iterFact
+    OP2 coord=examples/fact.walnut:15:9 op=REM
+      INT coord=examples/fact.walnut:15:9 value=10
+      INT coord=examples/fact.walnut:15:12 value=6

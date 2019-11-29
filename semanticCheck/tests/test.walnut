@@ -1,0 +1,101 @@
+
+
+class Sup  {
+    var Real x, y;
+    Sup(Real x, Real y) {
+		self.x = x;
+        self.y = y;
+	}
+    Real thing() { return 0.0;}
+
+}
+
+class Sub : Sup {
+	static var Int stat = 123;	
+	var Int a, b;
+ 	Sub(Int a, Int b, Real x, Real y){
+		super(x, y);
+    	self.a = a;
+		self.b = b;
+	}
+	Int stuff(Int a, Real b) { return 1;}
+}
+
+Int f(Int n, Int p) {
+	//var Sup c = Sub(2, 3, 1.2, 1.4);
+	//var Int[] tr;
+	var Int a, b, c =7, d = 4, e;
+	e = 1;
+    
+    var Int zz = 21;
+	
+	a = c + d;    
+	
+	a = 22;
+	
+    b = 4;
+    e = a + b + c + d + e;
+	//nil;  
+    //if(4==3){
+	//	a = b;
+	//}  
+	//var Real t = 9.9;	
+	//var Int a, b = 1, c = 2;
+	
+    //var String we = "yo";	
+	var String[] arr = String[3];
+	arr[0] = "word";
+	//var Int xx = nil;
+	//var Sup[] arr = Sup[3];
+	//arr[0] = Sup(6.6, 6.6);
+	//a = -1; // neg test pass
+	
+	//(Int)2.8;   // cast check pass 
+	//(Int)(33+93);
+    //(Sub)s;
+	//b = -(5 + 7); // expression cast not yet pass
+    
+	//b + 7;
+    //t + s.x;
+    //a + arr[0];
+	Sub.stat;
+	//a + s.stuff();
+	//a + (-3);
+	//a + (Int)4.0;
+	//a + (b=4);
+
+    //var Sup c = Sub(2, 3, 1.2, 1.4);
+	//c = nil;
+
+
+	//var Int[] z = { 1, 2, 3, 4, 5 };
+    //y = 3;
+    //var Real ww = 4.5;
+	//var String xx = -"string";
+	//var Real qw = !2.4;
+    //a = b + 1;
+	//a = "YO";
+	//z[0] = 5 + z[1];
+	//a < b;
+	//if (a) {
+	//(Sub)Sup(1.0, 2.0);
+	//}
+	//Sup(1.0, 2.0).x;
+	
+	//var Real u = obj.x;
+	//var Real qw = obj.thing();
+    if(1){
+		while(4){
+			return 3;
+		}
+	}
+
+    var Sup s = Sup(2.3, 9.3);
+    s.x;
+	s.thing();
+    g(3, 4);
+    return a;
+}
+Int g(Int p, Int q){
+	return 111;
+}

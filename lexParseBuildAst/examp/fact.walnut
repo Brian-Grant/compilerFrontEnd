@@ -1,0 +1,15 @@
+Int recFact(Int n) {
+  return n <= 1 ? 1 : n * recFact(n - 1);
+}
+
+Int iterFact(Int n) {
+  var f = 1, i = 2;
+  while (i < n) {
+    f = f * 2;
+    i = i + 1;
+  }
+  return f;
+}
+
+recFact(4);
+iterFact(10%6);

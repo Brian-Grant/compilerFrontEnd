@@ -1,0 +1,451 @@
+PROGRAM 
+  CLASS  super_name=Object type_name=$Main
+    DEFN  isStatic=True kind=function name=f
+      TYPE  rank=0 type_name=Int
+      PARAMS 
+        PARAM  name=n
+          TYPE  rank=0 type_name=Int
+        PARAM  name=p
+          TYPE  rank=0 type_name=Int
+      BLOCK 
+        DECLS  isStatic=False kind=var
+          TYPE  rank=0 type_name=Int
+          DECL  name=a type=Int type_name=Int
+          DECL  name=b type=Int type_name=Int
+          DECL  name=c type=Int type_name=Int
+          DECL  name=d type=Int type_name=Int
+          DECL  name=e type=Int type_name=Int
+        ASSIGN  type=Int
+          DEREF  type=Int
+            ID  name=c type=Int type_name=Int
+          INT  type=Int value=7
+        ASSIGN  type=Int
+          DEREF  type=Int
+            ID  name=d type=Int type_name=Int
+          INT  type=Int value=4
+        ASSIGN  type=Int
+          DEREF  type=Int
+            ID  name=e type=Int type_name=Int
+          INT  type=Int value=1
+        DECLS  isStatic=False kind=var
+          TYPE  rank=0 type_name=Int
+          DECL  name=zz type=Int type_name=Int
+        ASSIGN  type=Int
+          DEREF  type=Int
+            ID  name=zz type=Int type_name=Int
+          INT  type=Int value=21
+        ASSIGN  type=Int
+          DEREF  type=Int
+            ID  name=a type=Int type_name=Int
+          OP2  op=ADD type=Int
+            DEREF  type=Int
+              ID  name=c type=Int type_name=Int
+            DEREF  type=Int
+              ID  name=d type=Int type_name=Int
+        ASSIGN  type=Int
+          DEREF  type=Int
+            ID  name=a type=Int type_name=Int
+          INT  type=Int value=22
+        ASSIGN  type=Int
+          DEREF  type=Int
+            ID  name=b type=Int type_name=Int
+          INT  type=Int value=4
+        ASSIGN  type=Int
+          DEREF  type=Int
+            ID  name=e type=Int type_name=Int
+          OP2  op=ADD type=Int
+            OP2  op=ADD type=Int
+              OP2  op=ADD type=Int
+                OP2  op=ADD type=Int
+                  DEREF  type=Int
+                    ID  name=a type=Int type_name=Int
+                  DEREF  type=Int
+                    ID  name=b type=Int type_name=Int
+                DEREF  type=Int
+                  ID  name=c type=Int type_name=Int
+              DEREF  type=Int
+                ID  name=d type=Int type_name=Int
+            DEREF  type=Int
+              ID  name=e type=Int type_name=Int
+        DECLS  isStatic=False kind=var
+          TYPE  rank=1 type_name=String
+          DECL  name=arr type=String[] type_name=String
+        ASSIGN  type=String
+          DEREF  type=String[]
+            ID  name=arr type=String[] type_name=String
+          NEW_ARRAY  rank=1 type=String type_name=String
+            INT  type=Int value=3
+        ASSIGN  type=String
+          INDEX  type=String
+            ID  name=arr type=String[] type_name=String
+            INT  type=Int value=0
+          STRING  type=String value="word"
+        STATIC_ACCESS  name=stat type=Int type_name=Sub
+        IF  type=Int
+          INT  type=Int value=1
+          BLOCK 
+            WHILE  type=Int
+              INT  type=Int value=4
+              BLOCK 
+                RETURN  type=Int
+                  INT  type=Int value=3
+          BLOCK 
+        DECLS  isStatic=False kind=var
+          TYPE  rank=0 type_name=Sup
+          DECL  name=s type=Sup type_name=Sup
+        ASSIGN  type=Sup
+          DEREF  type=Sup
+            ID  name=s type=Sup type_name=Sup
+          NEW_OBJ  type=Sup type_name=Sup
+            REAL  type=Real value=2.3
+            REAL  type=Real value=9.3
+        ACCESS  kind=instance name=x type=Real
+          DEREF  type=Sup
+            ID  name=s type=Sup type_name=Sup
+        APP  type=Real
+          ACCESS  kind=method name=thing type=()->Real
+            ID  name=s type=Sup type_name=Sup
+        APP  type=Int
+          STATIC_ACCESS  name=g type=(Int,Int)->Int type_name=$Main
+          INT  type=Int value=3
+          INT  type=Int value=4
+        RETURN  type=Int
+          DEREF  type=Int
+            ID  name=a type=Int type_name=Int
+    DEFN  isStatic=True kind=function name=g
+      TYPE  rank=0 type_name=Int
+      PARAMS 
+        PARAM  name=p
+          TYPE  rank=0 type_name=Int
+        PARAM  name=q
+          TYPE  rank=0 type_name=Int
+      BLOCK 
+        RETURN  type=Int
+          INT  type=Int value=111
+    DEFN  isStatic=True kind=function name=$main
+      TYPE  rank=0 type_name=Void
+      PARAMS 
+      BLOCK 
+        APP  type=Void
+          STATIC_ACCESS  name=$staticInit type=()->Void type_name=$Main
+        APP  type=Void
+          STATIC_ACCESS  name=$staticInit type=()->Void type_name=Sup
+        APP  type=Void
+          STATIC_ACCESS  name=$staticInit type=()->Void type_name=Sub
+        APP  type=Void
+          STATIC_ACCESS  name=$staticInit type=()->Void type_name=Sys
+        APP  type=Void
+          STATIC_ACCESS  name=$staticInit type=()->Void type_name=Array
+    DEFN  isStatic=True kind=function name=$staticInit
+      TYPE  rank=0 type_name=Void
+      PARAMS 
+      BLOCK 
+  CLASS  super_name=Object type_name=Sup
+    DECLS  isStatic=False kind=var
+      TYPE  rank=0 type_name=Real
+      DECL  name=x
+      DECL  name=y
+    DEFN  isStatic=True kind=function name=Sup
+      TYPE  rank=0 type_name=Sup
+      PARAMS 
+        PARAM  name=x
+          TYPE  rank=0 type_name=Real
+        PARAM  name=y
+          TYPE  rank=0 type_name=Real
+      BLOCK 
+        DECLS  isStatic=False kind=var
+          TYPE  rank=0 type_name=Sup
+          DECL  name=self type=Sup type_name=Sup
+        ASSIGN  type=Sup
+          DEREF  type=Sup
+            ID  name=self type=Sup type_name=Sup
+          CAST  type=Sup
+            TYPE  rank=0 type_name=Sup
+            APP  type=Object
+              STATIC_ACCESS  name=allocObject type=(Int)->Object type_name=Sys
+              TYPE_ID  rank=0 type_name=Sup
+        APP  type=Sup
+          ACCESS  kind=method name=$instanceInit_Sup type=(Real,Real)->Sup
+            ID  name=self type=Sup type_name=Sup
+          DEREF  type=Real
+            ID  name=x type=Real type_name=Real
+          DEREF  type=Real
+            ID  name=y type=Real type_name=Real
+        RETURN  type=Sup
+          DEREF  type=Sup
+            ID  name=self type=Sup type_name=Sup
+    DEFN  isStatic=True kind=function name=$staticInit
+      TYPE  rank=0 type_name=Void
+      PARAMS 
+      BLOCK 
+    DEFN  isStatic=False kind=function name=thing
+      TYPE  rank=0 type_name=Real
+      PARAMS 
+      BLOCK 
+        RETURN  type=Real
+          REAL  type=Real value=0.0
+    DEFN  isStatic=False kind=function name=$instanceInit_Sup
+      TYPE  rank=0 type_name=Sup
+      PARAMS 
+        PARAM  name=x
+          TYPE  rank=0 type_name=Real
+        PARAM  name=y
+          TYPE  rank=0 type_name=Real
+      BLOCK 
+        ASSIGN  type=Real
+          ACCESS  kind=instance name=x type=Real
+            ID  name=self type=Sup type_name=Sup
+          DEREF  type=Real
+            ID  name=x type=Real type_name=Real
+        ASSIGN  type=Real
+          ACCESS  kind=instance name=y type=Real
+            ID  name=self type=Sup type_name=Sup
+          DEREF  type=Real
+            ID  name=y type=Real type_name=Real
+        RETURN  type=Sup
+          DEREF  type=Sup
+            ID  name=self type=Sup type_name=Sup
+  CLASS  super_name=Object type_name=Sys
+    DEFN  isStatic=True kind=function name=allocObject
+      TYPE  rank=0 type_name=Object
+      PARAMS 
+        PARAM  name=classId
+          TYPE  rank=0 type_name=Int
+      BLOCK 
+        RETURN  type=$Nil
+          NIL  type=$Nil value=nil
+    DEFN  isStatic=True kind=function name=allocArray
+      TYPE  rank=0 type_name=Object
+      PARAMS 
+        PARAM  name=arrayClassId
+          TYPE  rank=0 type_name=Int
+        PARAM  name=elementClassId
+          TYPE  rank=0 type_name=Int
+        PARAM  name=n
+          TYPE  rank=0 type_name=Int
+      BLOCK 
+        RETURN  type=$Nil
+          NIL  type=$Nil value=nil
+    DEFN  isStatic=True kind=function name=strCat
+      TYPE  rank=0 type_name=String
+      PARAMS 
+        PARAM  name=s1
+          TYPE  rank=0 type_name=String
+        PARAM  name=s2
+          TYPE  rank=0 type_name=String
+      BLOCK 
+        RETURN  type=String
+          STRING  type=String value=""
+    DEFN  isStatic=True kind=function name=strRepeat
+      TYPE  rank=0 type_name=String
+      PARAMS 
+        PARAM  name=s1
+          TYPE  rank=0 type_name=String
+        PARAM  name=repeatCount
+          TYPE  rank=0 type_name=Int
+      BLOCK 
+        RETURN  type=String
+          STRING  type=String value=""
+    DEFN  isStatic=True kind=function name=strEq
+      TYPE  rank=0 type_name=Int
+      PARAMS 
+        PARAM  name=s1
+          TYPE  rank=0 type_name=String
+        PARAM  name=s2
+          TYPE  rank=0 type_name=String
+      BLOCK 
+        RETURN  type=Int
+          INT  type=Int value=0
+    DEFN  isStatic=True kind=function name=strLt
+      TYPE  rank=0 type_name=Int
+      PARAMS 
+        PARAM  name=s1
+          TYPE  rank=0 type_name=String
+        PARAM  name=s2
+          TYPE  rank=0 type_name=String
+      BLOCK 
+        RETURN  type=Int
+          INT  type=Int value=0
+    DEFN  isStatic=True kind=function name=strLeq
+      TYPE  rank=0 type_name=Int
+      PARAMS 
+        PARAM  name=s1
+          TYPE  rank=0 type_name=String
+        PARAM  name=s2
+          TYPE  rank=0 type_name=String
+      BLOCK 
+        RETURN  type=Int
+          INT  type=Int value=0
+    DEFN  isStatic=True kind=function name=Sys
+      TYPE  rank=0 type_name=Sys
+      PARAMS 
+      BLOCK 
+        DECLS  isStatic=False kind=var
+          TYPE  rank=0 type_name=Sys
+          DECL  name=self type=Sys type_name=Sys
+        ASSIGN  type=Sys
+          DEREF  type=Sys
+            ID  name=self type=Sys type_name=Sys
+          CAST  type=Sys
+            TYPE  rank=0 type_name=Sys
+            APP  type=Object
+              STATIC_ACCESS  name=allocObject type=(Int)->Object type_name=Sys
+              TYPE_ID  rank=0 type_name=Sys
+        APP  type=Sys
+          ACCESS  kind=method name=$instanceInit_Sys type=()->Sys
+            ID  name=self type=Sys type_name=Sys
+        RETURN  type=Sys
+          DEREF  type=Sys
+            ID  name=self type=Sys type_name=Sys
+    DEFN  isStatic=True kind=function name=$staticInit
+      TYPE  rank=0 type_name=Void
+      PARAMS 
+      BLOCK 
+    DEFN  isStatic=False kind=function name=$instanceInit_Sys
+      TYPE  rank=0 type_name=Sys
+      PARAMS 
+      BLOCK 
+        RETURN  type=Sys
+          DEREF  type=Sys
+            ID  name=self type=Sys type_name=Sys
+  CLASS  super_name=Object type_name=Array
+    DECLS  isStatic=False kind=var
+      TYPE  rank=0 type_name=Int
+      DECL  name=length
+    DEFN  isStatic=True kind=function name=Array
+      TYPE  rank=0 type_name=Array
+      PARAMS 
+        PARAM  name=len
+          TYPE  rank=0 type_name=Int
+      BLOCK 
+        DECLS  isStatic=False kind=var
+          TYPE  rank=0 type_name=Array
+          DECL  name=self type=Array type_name=Array
+        ASSIGN  type=Array
+          DEREF  type=Array
+            ID  name=self type=Array type_name=Array
+          CAST  type=Array
+            TYPE  rank=0 type_name=Array
+            APP  type=Object
+              STATIC_ACCESS  name=allocObject type=(Int)->Object type_name=Sys
+              TYPE_ID  rank=0 type_name=Array
+        APP  type=Array
+          ACCESS  kind=method name=$instanceInit_Array type=(Int)->Array
+            ID  name=self type=Array type_name=Array
+          DEREF  type=Int
+            ID  name=len type=Int type_name=Int
+        RETURN  type=Array
+          DEREF  type=Array
+            ID  name=self type=Array type_name=Array
+    DEFN  isStatic=True kind=function name=$staticInit
+      TYPE  rank=0 type_name=Void
+      PARAMS 
+      BLOCK 
+    DEFN  isStatic=False kind=function name=$instanceInit_Array
+      TYPE  rank=0 type_name=Array
+      PARAMS 
+        PARAM  name=len
+          TYPE  rank=0 type_name=Int
+      BLOCK 
+        ASSIGN  type=Int
+          ACCESS  kind=instance name=length type=Int
+            ID  name=self type=Array type_name=Array
+          DEREF  type=Int
+            ID  name=len type=Int type_name=Int
+        RETURN  type=Array
+          DEREF  type=Array
+            ID  name=self type=Array type_name=Array
+  CLASS  super_name=Sup type_name=Sub
+    DECLS  isStatic=False kind=var
+      TYPE  rank=0 type_name=Int
+      DECL  name=a
+      DECL  name=b
+    DECLS  isStatic=True kind=var
+      TYPE  rank=0 type_name=Int
+      DECL  name=stat
+    DEFN  isStatic=True kind=function name=Sub
+      TYPE  rank=0 type_name=Sub
+      PARAMS 
+        PARAM  name=a
+          TYPE  rank=0 type_name=Int
+        PARAM  name=b
+          TYPE  rank=0 type_name=Int
+        PARAM  name=x
+          TYPE  rank=0 type_name=Real
+        PARAM  name=y
+          TYPE  rank=0 type_name=Real
+      BLOCK 
+        DECLS  isStatic=False kind=var
+          TYPE  rank=0 type_name=Sub
+          DECL  name=self type=Sub type_name=Sub
+        ASSIGN  type=Sub
+          DEREF  type=Sub
+            ID  name=self type=Sub type_name=Sub
+          CAST  type=Sub
+            TYPE  rank=0 type_name=Sub
+            APP  type=Object
+              STATIC_ACCESS  name=allocObject type=(Int)->Object type_name=Sys
+              TYPE_ID  rank=0 type_name=Sub
+        APP  type=Sub
+          ACCESS  kind=method name=$instanceInit_Sub type=(Int,Int,Real,Real)->Sub
+            ID  name=self type=Sub type_name=Sub
+          DEREF  type=Int
+            ID  name=a type=Int type_name=Int
+          DEREF  type=Int
+            ID  name=b type=Int type_name=Int
+          DEREF  type=Real
+            ID  name=x type=Real type_name=Real
+          DEREF  type=Real
+            ID  name=y type=Real type_name=Real
+        RETURN  type=Sub
+          DEREF  type=Sub
+            ID  name=self type=Sub type_name=Sub
+    DEFN  isStatic=True kind=function name=$staticInit
+      TYPE  rank=0 type_name=Void
+      PARAMS 
+      BLOCK 
+        ASSIGN  type=Int
+          STATIC_ACCESS  name=stat type=Int type_name=Sub
+          INT  type=Int value=123
+    DEFN  isStatic=False kind=function name=stuff
+      TYPE  rank=0 type_name=Int
+      PARAMS 
+        PARAM  name=a
+          TYPE  rank=0 type_name=Int
+        PARAM  name=b
+          TYPE  rank=0 type_name=Real
+      BLOCK 
+        RETURN  type=Int
+          INT  type=Int value=1
+    DEFN  isStatic=False kind=function name=$instanceInit_Sub
+      TYPE  rank=0 type_name=Sub
+      PARAMS 
+        PARAM  name=a
+          TYPE  rank=0 type_name=Int
+        PARAM  name=b
+          TYPE  rank=0 type_name=Int
+        PARAM  name=x
+          TYPE  rank=0 type_name=Real
+        PARAM  name=y
+          TYPE  rank=0 type_name=Real
+      BLOCK 
+        APP  type=Sup
+          ACCESS  kind=method name=$instanceInit_Sup type=(Real,Real)->Sup
+            ID  name=super type=Sup type_name=Sup
+          DEREF  type=Real
+            ID  name=x type=Real type_name=Real
+          DEREF  type=Real
+            ID  name=y type=Real type_name=Real
+        ASSIGN  type=Int
+          ACCESS  kind=instance name=a type=Int
+            ID  name=self type=Sub type_name=Sub
+          DEREF  type=Int
+            ID  name=a type=Int type_name=Int
+        ASSIGN  type=Int
+          ACCESS  kind=instance name=b type=Int
+            ID  name=self type=Sub type_name=Sub
+          DEREF  type=Int
+            ID  name=b type=Int type_name=Int
+        RETURN  type=Sub
+          DEREF  type=Sub
+            ID  name=self type=Sub type_name=Sub

@@ -1,0 +1,26 @@
+PROGRAM coord=simple-let.tl0:2:0
+  DEFN coord=simple-let.tl0:2:0 name=f
+    PARAMS arity=2 coord=simple-let.tl0:2:6
+      PARAM coord=simple-let.tl0:2:6 name=a
+      PARAM coord=simple-let.tl0:2:8 name=b
+    LET coord=simple-let.tl0:3:3
+      LETIDEXPR arity=2.0 coord=simple-let.tl0:4:5
+        REF coord=simple-let.tl0:4:5 name=x
+        ADD coord=simple-let.tl0:4:7
+          REF coord=simple-let.tl0:4:9 name=a
+          REF coord=simple-let.tl0:4:11 name=a
+        REF coord=simple-let.tl0:5:5 name=y
+        ADD coord=simple-let.tl0:5:7
+          REF coord=simple-let.tl0:5:9 name=b
+          REF coord=simple-let.tl0:5:11 name=b
+      ADD coord=simple-let.tl0:7:4
+        ADD coord=simple-let.tl0:7:6
+          REF coord=simple-let.tl0:7:8 name=x
+          REF coord=simple-let.tl0:7:10 name=y
+        ADD coord=simple-let.tl0:7:12
+          REF coord=simple-let.tl0:7:14 name=a
+          REF coord=simple-let.tl0:7:16 name=b
+  APP coord=simple-let.tl0:10:1 name=f
+    ARGS arity=2 coord=simple-let.tl0:10:3
+      INT coord=simple-let.tl0:10:3 value=1
+      INT coord=simple-let.tl0:10:5 value=2

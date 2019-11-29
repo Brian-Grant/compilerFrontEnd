@@ -1,0 +1,110 @@
+PROGRAM coord=let1.tl0:2:0
+  DEFN coord=let1.tl0:2:0 name=f
+    PARAMS arity=2 coord=let1.tl0:2:6
+      PARAM coord=let1.tl0:2:6 name=a
+      PARAM coord=let1.tl0:2:8 name=b
+    LET coord=let1.tl0:3:3
+      LETIDEXPR arity=2.0 coord=let1.tl0:4:5
+        REF coord=let1.tl0:4:5 name=x
+        ADD coord=let1.tl0:4:7
+          REF coord=let1.tl0:4:9 name=a
+          REF coord=let1.tl0:4:11 name=b
+        REF coord=let1.tl0:5:5 name=y
+        SUB coord=let1.tl0:5:7
+          REF coord=let1.tl0:5:9 name=a
+          REF coord=let1.tl0:5:11 name=b
+      ADD coord=let1.tl0:7:5
+        MUL coord=let1.tl0:7:7
+          REF coord=let1.tl0:7:9 name=x
+          REF coord=let1.tl0:7:11 name=x
+        ADD coord=let1.tl0:7:13
+          MUL coord=let1.tl0:7:15
+            REF coord=let1.tl0:7:17 name=x
+            REF coord=let1.tl0:7:19 name=y
+          ADD coord=let1.tl0:7:21
+            MUL coord=let1.tl0:7:23
+              REF coord=let1.tl0:7:25 name=y
+              REF coord=let1.tl0:7:27 name=y
+            MUL coord=let1.tl0:7:29
+              REF coord=let1.tl0:7:31 name=a
+              REF coord=let1.tl0:7:33 name=b
+  APP coord=let1.tl0:11:1 name=f
+    ARGS arity=2 coord=let1.tl0:11:3
+      INT coord=let1.tl0:11:3 value=2
+      INT coord=let1.tl0:11:5 value=3
+  DEFN coord=let1.tl0:14:0 name=g
+    PARAMS arity=3 coord=let1.tl0:14:6
+      PARAM coord=let1.tl0:14:6 name=a
+      PARAM coord=let1.tl0:14:8 name=b
+      PARAM coord=let1.tl0:14:10 name=c
+    LET coord=let1.tl0:15:3
+      LETIDEXPR arity=2.0 coord=let1.tl0:16:5
+        REF coord=let1.tl0:16:5 name=a
+        ADD coord=let1.tl0:16:7
+          REF coord=let1.tl0:16:9 name=a
+          INT coord=let1.tl0:16:11 value=2
+        REF coord=let1.tl0:17:5 name=b
+        MUL coord=let1.tl0:17:7
+          REF coord=let1.tl0:17:9 name=a
+          ADD coord=let1.tl0:17:11
+            REF coord=let1.tl0:17:13 name=b
+            REF coord=let1.tl0:17:16 name=c
+      SUB coord=let1.tl0:19:5
+        ADD coord=let1.tl0:19:7
+          REF coord=let1.tl0:19:9 name=a
+          REF coord=let1.tl0:19:12 name=b
+        REF coord=let1.tl0:19:14 name=c
+  APP coord=let1.tl0:23:1 name=g
+    ARGS arity=3 coord=let1.tl0:23:3
+      INT coord=let1.tl0:23:3 value=2
+      INT coord=let1.tl0:23:5 value=2
+      INT coord=let1.tl0:23:7 value=3
+  DEFN coord=let1.tl0:26:0 name=h
+    PARAMS arity=3 coord=let1.tl0:26:6
+      PARAM coord=let1.tl0:26:6 name=a
+      PARAM coord=let1.tl0:26:8 name=b
+      PARAM coord=let1.tl0:26:10 name=c
+    LET coord=let1.tl0:27:3
+      LETIDEXPR arity=2.0 coord=let1.tl0:28:5
+        REF coord=let1.tl0:28:5 name=a
+        LET coord=let1.tl0:28:8
+          LETIDEXPR arity=2.0 coord=let1.tl0:29:10
+            REF coord=let1.tl0:29:10 name=x
+            MUL coord=let1.tl0:29:12
+              REF coord=let1.tl0:29:14 name=a
+              REF coord=let1.tl0:29:16 name=b
+            REF coord=let1.tl0:30:10 name=b
+            MUL coord=let1.tl0:30:12
+              ADD coord=let1.tl0:30:14
+                REF coord=let1.tl0:30:16 name=a
+                REF coord=let1.tl0:30:18 name=b
+              REF coord=let1.tl0:30:20 name=c
+          REM coord=let1.tl0:32:10
+            ADD coord=let1.tl0:32:12
+              REF coord=let1.tl0:32:14 name=x
+              REF coord=let1.tl0:32:16 name=b
+            REF coord=let1.tl0:32:18 name=c
+        REF coord=let1.tl0:34:5 name=b
+        INT coord=let1.tl0:34:7 value=22
+      SUB coord=let1.tl0:36:5
+        ADD coord=let1.tl0:37:7
+          REF coord=let1.tl0:37:9 name=a
+          REF coord=let1.tl0:37:11 name=b
+        LET coord=let1.tl0:38:8
+          LETIDEXPR arity=2.0 coord=let1.tl0:39:10
+            REF coord=let1.tl0:39:10 name=a
+            ADD coord=let1.tl0:39:12
+              REF coord=let1.tl0:39:14 name=a
+              REF coord=let1.tl0:39:16 name=c
+            REF coord=let1.tl0:40:10 name=b
+            INT coord=let1.tl0:40:12 value=3
+          ADD coord=let1.tl0:42:10
+            SUB coord=let1.tl0:42:12
+              REF coord=let1.tl0:42:14 name=a
+              REF coord=let1.tl0:42:16 name=b
+            REF coord=let1.tl0:42:18 name=c
+  APP coord=let1.tl0:46:1 name=h
+    ARGS arity=3 coord=let1.tl0:46:3
+      INT coord=let1.tl0:46:3 value=3
+      INT coord=let1.tl0:46:5 value=4
+      INT coord=let1.tl0:46:7 value=5

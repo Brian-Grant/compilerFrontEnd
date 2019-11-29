@@ -1,0 +1,46 @@
+class Math {
+  static const _PI = 3.14159;
+}
+
+//an abstract class, but walnut does not provide support
+//for abstract classes.
+class Shape {
+  const Real x, y;
+  Shape(Real x, Real y) {
+    self.x = x;
+    self.y = y;
+  }
+  Real area() { return 0.0; } //no abstract method
+}
+
+class Rect : Shape { //rectangle extends shape
+  const Real w, h;
+  Rect(Real x, Real y, Real w = 1, Real h = 1) {
+    super(x, y);
+    self.w = w; self.h = h;
+  }
+  Real area() { return self.w * self.h; }
+}
+
+class Circle : Shape { //circle extends shape
+  const Real r;
+  Circle(Real x, Real y, Real r) {
+    super(x, y);
+    self.r = r;
+  }
+  Real area() { return Math._PI * self.r * self.r; }
+}
+
+//main program
+const Shape[] shapes = {
+  Circle(0, 0),
+  Rect(w: 2, h: 3, y: 4, x: 5),
+  Circle(0, 3, r: 3),
+};
+var Int i = 0;
+var Real sum = 0;
+while (i < shapes.length) {
+  sum = sum + shapes[i].area();
+  i = i + 1;
+}
+printReal(sum);
